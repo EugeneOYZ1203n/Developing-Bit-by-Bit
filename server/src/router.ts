@@ -1,12 +1,15 @@
 import express from 'express';
-import readContentItems from './controllers/readContentItems';
+
 import createContentItem from './controllers/createContentItem';
+import readContentItems from './controllers/readContentItems';
+import updateContentItem from './controllers/updateContentItem';
 import deleteContentItem from './controllers/deleteContentItem';
 
 const router = express.Router();
 
-router.get('/content', readContentItems);
 router.post('/content', createContentItem);
+router.get('/content', readContentItems);
+router.put('/content/:id', updateContentItem);
 router.delete('/content/:id', deleteContentItem);
 
 export default router;
