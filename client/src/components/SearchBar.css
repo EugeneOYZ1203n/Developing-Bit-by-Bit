@@ -1,0 +1,26 @@
+.SearchBar {
+    display: block;
+    margin: 10px auto 20px;
+    width: 80%;
+}
+
+input {
+    width: 100%;
+    background-color: var(--light-blue);
+    border: none;
+    height: 1.5rem;
+    padding-left: 1em;
+    border-radius: 10px;
+    color: var(--white);
+
+    transition: height 0.5s;
+}
+input::placeholder {
+    color: var(--dark-blue);
+}
+input:focus{
+    outline: var(--white) solid 1px;
+    height: 2rem;
+
+    transition: height 0.5s;
+}

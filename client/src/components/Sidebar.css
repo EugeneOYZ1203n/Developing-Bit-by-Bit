@@ -1,8 +1,21 @@
 .Sidebar {
     height: 100vh;
     width: 230px;
-    border: 2px solid black;
-    background-color: green;
+    
+    background-color: var(--dark-blue);
     position: fixed;
     left: 0;
+
+    color: var(--white)
+}
+
+.Logo {
+    margin: 20px auto 10px;
+    width: 180px;
+    display: block;
+}
+
+.Logo p {
+    font-size: 10px;
+    margin-left: 1px;
 }
