@@ -3,7 +3,25 @@
   --mid-blue: #1C2541;
   --light-blue: #3A506B;
   --orange: #FCA311;
+  --grey: #E4E4E4;
   --white: #FFF;
 
   font-family: Verdana, sans-serif;
+}
+
+.PlusMinusButton {
+  background-color: var(--light-blue);
+  width: 20px;
+  border: 2px solid var(--dark-blue);
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+.PlusMinusButton:hover {
+  background-color: var(--dark-blue);
+  border: 2px solid var(--light-blue);
+  color: var(--light-blue);
 }
