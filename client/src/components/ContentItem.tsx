@@ -18,14 +18,17 @@ export default ({titleData, isAdmin}:{titleData: {
     const [variationIndex, setVariationIndex] = useState(0);
 
     useEffect(()=>{
-        document.querySelector("code")?.removeAttribute("data-highlighted")
-        hljs.highlightAll()
+        const codeBlock = document.getElementById(`Code-Block-${titleData.chapter_num}-${titleData.title_num}`);
+        console.log(codeBlock)
+        
+        codeBlock!.removeAttribute("data-highlighted");
+        hljs.highlightElement(codeBlock!)
     }, [variationIndex])
     
     return (
         <div className="ContentItem">
             <div className='ContentItem-HorizontalFlexBox'>
-                <h2>{titleData.title} {isAdmin?<button className='editButton'>{"\[ Edit \]"}</button>:null}</h2>
+                <h2>{titleData.title} {isAdmin?<button className='editButton'>{"\[ edit \]"}</button>:null}</h2>
                 <p>#{String(titleData.chapter_num)}-{String(titleData.title_num)}</p>
             </div>
 
@@ -45,7 +48,7 @@ export default ({titleData, isAdmin}:{titleData: {
                 {titleData.variations[variationIndex].variationDesc}
             </p>
 
-            <pre><code>
+            <pre><code id={`Code-Block-${titleData.chapter_num}-${titleData.title_num}`}>
                 {titleData.variations[variationIndex].variationCode}
             </code></pre>
 

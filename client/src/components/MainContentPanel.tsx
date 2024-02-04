@@ -9,78 +9,28 @@ export default () => {
         title: "Binary Search",
         variations: [{
             variationName: "Javascript",
-            variationCode: "for (let i = 0; i < n; i++){\n   binarySearch()\n}",
-            variationDesc: "Binary search allows you to ...",
+            variationCode: "for (let i = 0; i < n; i++){\n\tbinarySearch()\n}",
+            variationDesc: "A way to quickly find elements in a sorted array",
         },{
             variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
-        },{
-            variationName: "Python",
-            variationCode: "for i in range(n):\nbinarySearch()",
-            variationDesc: "Binary search allows you to ...",
+            variationCode: "for i in range(n):\n\tbinarySearch()",
+            variationDesc: "Binary search allows you to python easy",
         }],
-        tags: ["Algorithms", "Javascript","Algorithms", "Javascript","Algorithms", "Javascript","Algorithms", "Javascript","Algorithms", "Javascript","Algorithms", "Javascript","Algorithms", "Javascript","Algorithms", "Javascript"]
+        tags: ["Algorithms", "Javascript"]
+    },{
+        chapter_num: 1,
+        title_num: 2,
+        title: "Binary Search",
+        variations: [{
+            variationName: "Javascript",
+            variationCode: "for (let i = 0; i < n; i++){\n\tbinarySearch()\n}",
+            variationDesc: "A way to quickly find elements in a sorted array",
+        },{
+            variationName: "Python",
+            variationCode: "for i in range(n):\n\tbinarySearch()",
+            variationDesc: "Binary search allows you to python easy",
+        }],
+        tags: ["Algorithms", "Javascript"]
     }]
 
 
@@ -89,8 +39,6 @@ export default () => {
             {data.map((titleData, index)=> {
                 return <ContentItem key={index} isAdmin={true} titleData={titleData}/>
             })}
-            
-            
         </div>
     )
 }
