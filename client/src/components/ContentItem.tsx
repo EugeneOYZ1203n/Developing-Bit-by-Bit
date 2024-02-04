@@ -6,6 +6,7 @@ import hljs from "highlight.js"
 export default ({titleData, isAdmin}:{titleData: {
     chapter_num: Number,
     title_num: Number,
+    chapter: String,
     title: String,
     variations: Array<{
         variationName: String,

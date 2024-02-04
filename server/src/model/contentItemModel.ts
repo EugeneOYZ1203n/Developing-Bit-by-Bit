@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
 const contentItemSchema = new mongoose.Schema({
+    chapter_num: Number,
+    title_num: Number,
     chapter: String,
     title: String,
     variations: [{

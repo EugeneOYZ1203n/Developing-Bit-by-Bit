@@ -6,6 +6,7 @@ export default () => {
     const data = [{
         chapter_num: 1,
         title_num: 1,
+        chapter: "Algorithms",
         title: "Binary Search",
         variations: [{
             variationName: "Javascript",
@@ -20,6 +21,7 @@ export default () => {
     },{
         chapter_num: 1,
         title_num: 2,
+        chapter: "Algorithms",
         title: "Binary Search",
         variations: [{
             variationName: "Javascript",
