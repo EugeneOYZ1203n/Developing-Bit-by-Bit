@@ -17,7 +17,7 @@ export default ({chapter, isAdmin}:{chapter: {name: String, titles: Array<String
                     <div key={title+String(i)} className='titleGroup'>
                         <a>
                             <p>{title}</p>
-                            {isAdmin?<button className='PlusMinusButton'>-</button>:null}
+                            {isAdmin?<button className='PlusMinusButton'>x</button>:null}
                         </a>
                     </div>
                     )

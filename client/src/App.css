@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-.HorizontalFlexBox {
+.App-HorizontalFlexBox {
   display: flex;
   justify-content: center;
 }

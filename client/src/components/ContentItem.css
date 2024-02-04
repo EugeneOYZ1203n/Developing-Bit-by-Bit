@@ -1,0 +1,88 @@
+.ContentItem {
+    background-color: var(--dark-blue);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.ContentItem h2,.ContentItem p {
+    color: var(--grey)
+}
+
+.ContentItem-HorizontalFlexBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ContentItem-HorizontalFlexBox p {
+    font-size: 8px;
+    color: var(--light-blue)
+}
+
+.ContentItem-HorizontalFlexBox h2 button{
+    background-color: transparent;
+    border: none;
+    color: var(--light-blue);
+}
+.ContentItem-HorizontalFlexBox h2 button:hover{
+    color: var(--orange);
+}
+
+.ContentItem-Description {
+    margin: 20px 0 20px;
+}
+
+.buttonList {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Used to make sure the last row does not stretch */
+.buttonListLast {
+    flex: 100;
+}
+
+.buttonList button {
+    padding: 5px 1em;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    border: 2px solid var(--light-blue);
+
+    cursor: pointer;
+
+    flex: auto;
+
+    margin-right: -2px;
+    margin-top: -2px;
+}
+
+.buttonList .Selected {
+    color: var(--dark-blue);
+    background-color: var(--white);
+}
+
+.buttonList button:hover {
+    color: var(--orange)
+}
+
+.tagsList {
+    font-size: 8px;
+    margin: 10px 0;
+    padding: 6px 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tagsList p {
+    background-color: var(--mid-blue);
+    padding: 6px;
+    border-radius: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.tagsList p:before {
+    content:"#"
+}
