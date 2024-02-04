@@ -1,0 +1,57 @@
+.LoginPage {
+    background-color: var(--mid-blue);
+    width: 100vw;
+    height: 100vh;
+    color: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginPageForm {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+}
+
+.LoginPage input {
+    width: 20em;
+    background-color: var(--light-blue);
+    border: none;
+    height: 2em;
+    padding-left: 1em;
+    border-radius: 10px;
+    color: var(--white);
+    margin: 5px;
+    display: block;
+
+    transition: height 0.5s;
+}
+.LoginPage input::placeholder {
+    color: var(--dark-blue);
+}
+.LoginPage input:focus{
+    outline: var(--white) solid 1px;
+    height: 3em;
+
+    transition: height 0.5s;
+}
+
+.LoginPage button {
+    display: block;
+    margin: 10px auto;
+
+    width: 10em;
+
+    background-color: var(--white);
+
+    padding: 5px;
+    border-radius: 10px;
+
+    border: none;
+}
+
+.LoginPage button:hover {
+    background-color: var(--orange);
+}

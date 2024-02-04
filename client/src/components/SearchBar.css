@@ -4,7 +4,7 @@
     width: 80%;
 }
 
-input {
+.SearchBar input {
     width: 100%;
     background-color: var(--light-blue);
     border: none;
@@ -15,10 +15,10 @@ input {
 
     transition: height 0.5s;
 }
-input::placeholder {
+.SearchBar input::placeholder {
     color: var(--dark-blue);
 }
-input:focus{
+.SearchBar input:focus{
     outline: var(--white) solid 1px;
     height: 2rem;
 

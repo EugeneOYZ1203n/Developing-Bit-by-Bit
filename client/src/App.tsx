@@ -1,15 +1,16 @@
 import './App.css'
-import MainContentPanel from './components/MainContentPanel'
 
-import Sidebar from './components/Sidebar'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import ContentPage from './pages/ContentPage'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   return (
     <div className='App'>
-      <div className='HorizontalFlexBox'>
-        <Sidebar />
-        <MainContentPanel />
-      </div>
+      <Routes>
+        <Route path="/" element={<ContentPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
     </div>
   )
 }
