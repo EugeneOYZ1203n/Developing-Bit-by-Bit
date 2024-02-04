@@ -41,7 +41,7 @@ export default () => {
                 {chapters.map((chapter, i) => {
                     return <ContentHeader chapter={chapter} isAdmin={isAdmin} key={chapter.name+String(i)}/>
                 })}
-                {isAdmin ? <div><button className='PlusMinusButton largerButton'>+</button></div>: null}
+                {isAdmin ? <div><button className='editButton addButton'>{"\[ add new title \]"}</button></div>: null}
             </div>
         </div>
     )

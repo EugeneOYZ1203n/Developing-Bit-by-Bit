@@ -25,7 +25,7 @@ export default ({titleData, isAdmin}:{titleData: {
     return (
         <div className="ContentItem">
             <div className='ContentItem-HorizontalFlexBox'>
-                <h2>{titleData.title} {isAdmin?<button>{"\[ Edit \]"}</button>:null}</h2>
+                <h2>{titleData.title} {isAdmin?<button className='editButton'>{"\[ Edit \]"}</button>:null}</h2>
                 <p>#{String(titleData.chapter_num)}-{String(titleData.title_num)}</p>
             </div>
 

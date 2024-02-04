@@ -18,15 +18,6 @@
     color: var(--light-blue)
 }
 
-.ContentItem-HorizontalFlexBox h2 button{
-    background-color: transparent;
-    border: none;
-    color: var(--light-blue);
-}
-.ContentItem-HorizontalFlexBox h2 button:hover{
-    color: var(--orange);
-}
-
 .ContentItem-Description {
     margin: 20px 0 20px;
 }

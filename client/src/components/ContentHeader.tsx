@@ -15,10 +15,8 @@ export default ({chapter, isAdmin}:{chapter: {name: String, titles: Array<String
                 {chapter.titles.map((title: String, i)=>{
                     return (
                     <div key={title+String(i)} className='titleGroup'>
-                        <a>
-                            <p>{title}</p>
-                            {isAdmin?<button className='PlusMinusButton'>x</button>:null}
-                        </a>
+                        <a><p>{title}</p></a>
+                        {isAdmin?<button className='editButton'>{"\[ delete \]"}</button>:null}
                     </div>
                     )
                 })}

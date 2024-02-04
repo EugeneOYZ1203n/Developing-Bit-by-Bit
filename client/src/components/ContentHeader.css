@@ -38,7 +38,7 @@
     transition: all 0.1s ease-in-out;
 }
 
-.titleGroup a {
+.titleGroup {
     margin-left: 1em;
     border-top: 2px solid var(--mid-blue);
     padding: 0.25em 0;
@@ -46,7 +46,7 @@
     justify-content: space-between;
 }
 
-.titleGroup a:last-of-type {
+.titleGroup:last-of-type {
     margin-bottom: 15px;
 }
 
@@ -55,10 +55,10 @@
     font-size: 13px;
 }
 
-a {
+.ContentHeader a {
     cursor: pointer;
 }
 
-a:hover {
+.ContentHeader a:hover {
     color: var(--orange);
 }
