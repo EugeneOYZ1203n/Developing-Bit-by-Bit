@@ -5,14 +5,14 @@ import hljs from "highlight.js"
 
 export default ({titleData, isAdmin, editFunction}:{titleData: {
     title_num: Number,
-    chapter: String,
-    title: String,
+    chapter: string,
+    title: string,
     variations: Array<{
-        variationName: String,
-        variationCode: String,
-        variationDesc: String,
+        variationName: string,
+        variationCode: string,
+        variationDesc: string,
     }>,
-    tags: Array<String>
+    tags: Array<string>
 }, isAdmin:Boolean, editFunction: Function}) => {
 
     const [variationIndex, setVariationIndex] = useState(0);
@@ -27,7 +27,7 @@ export default ({titleData, isAdmin, editFunction}:{titleData: {
     return (
         <div className="ContentItem">
             <div className='ContentItem-HorizontalFlexBox'>
-                <h2>{titleData.title} {isAdmin?
+                <h2 id={titleData.title}>{titleData.title} {isAdmin?
                     <button className='editButton' onClick={()=>editFunction()}>{"\[ edit \]"}</button>
                     :null} {isAdmin?
                     <button className='editButton'>{"\[ delete \]"}</button>

@@ -7,14 +7,14 @@ import ReactTextareaAutosize from 'react-textarea-autosize';
 
 export default ({titleData, closeFunction}:{titleData: {
     title_num: Number,
-    chapter: String,
-    title: String,
+    chapter: string,
+    title: string,
     variations: Array<{
-        variationName: String,
-        variationCode: String,
-        variationDesc: String,
+        variationName: string,
+        variationCode: string,
+        variationDesc: string,
     }>,
-    tags: Array<String>
+    tags: Array<string>
 }, closeFunction : Function}) => {
 
     const [editedTitleData, setEditedTitleData] = useState(JSON.parse(JSON.stringify(titleData)));
@@ -42,7 +42,7 @@ export default ({titleData, closeFunction}:{titleData: {
                         setEditedTitleData({...editedTitleData,tags: e.target.value.split(", ")})
                     }/>
 
-                {editedTitleData.variations.map((variation:{variationName: String, variationCode: String, variationDesc: String}, index:number)=>{return(
+                {editedTitleData.variations.map((variation:{variationName: string, variationCode: string, variationDesc: string}, index:number)=>{return(
                     <div className='VariationDiv'>
                         <input type='text' value={variation.variationName as string | number | readonly string[] | undefined} placeholder='Variation Name' onChange={(e)=>{
                             let tmp = editedTitleData.variations;

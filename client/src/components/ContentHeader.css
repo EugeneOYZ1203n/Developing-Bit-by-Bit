@@ -55,6 +55,10 @@
     font-size: 13px;
 }
 
+.titleGroup .editButton {
+    min-width: 4em;
+}
+
 .ContentHeader a {
     cursor: pointer;
 }
