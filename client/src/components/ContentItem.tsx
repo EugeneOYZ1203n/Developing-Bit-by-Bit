@@ -3,7 +3,7 @@ import './ContentItem.css';
 import "./hljsCustomTheme.css"
 import hljs from "highlight.js"
 
-export default ({titleData, isAdmin}:{titleData: {
+export default ({titleData, isAdmin, editFunction}:{titleData: {
     title_num: Number,
     chapter: String,
     title: String,
@@ -13,13 +13,12 @@ export default ({titleData, isAdmin}:{titleData: {
         variationDesc: String,
     }>,
     tags: Array<String>
-}, isAdmin:Boolean}) => {
+}, isAdmin:Boolean, editFunction: Function}) => {
 
     const [variationIndex, setVariationIndex] = useState(0);
 
     useEffect(()=>{
         const codeBlock = document.getElementById(`Code-Block-${titleData.chapter}-${titleData.title_num}`);
-        console.log(codeBlock)
         
         codeBlock!.removeAttribute("data-highlighted");
         hljs.highlightElement(codeBlock!)
@@ -28,7 +27,13 @@ export default ({titleData, isAdmin}:{titleData: {
     return (
         <div className="ContentItem">
             <div className='ContentItem-HorizontalFlexBox'>
-                <h2>{titleData.title} {isAdmin?<button className='editButton'>{"\[ edit \]"}</button>:null}</h2>
+                <h2>{titleData.title} {isAdmin?
+                    <button className='editButton' onClick={()=>editFunction()}>{"\[ edit \]"}</button>
+                    :null} {isAdmin?
+                    <button className='editButton'>{"\[ delete \]"}</button>
+                    :null}
+                    
+                </h2>
                 <p>#{`${titleData.chapter}-${titleData.title_num}`}</p>
             </div>
 

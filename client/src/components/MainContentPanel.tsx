@@ -2,6 +2,7 @@ import './MainContentPanel.css'
 
 import ContentItem from './ContentItem'
 import EditContentItemForm from './EditContentItemForm'
+import { useState } from 'react'
 
 export default () => {
     const data = [{
@@ -34,12 +35,17 @@ export default () => {
         tags: ["Algorithms", "Javascript"]
     }]
 
+    const [editIndex, setEditIndex] = useState(-1);
+
     return (
         <div className="MainContentPanel">
-            <EditContentItemForm titleData={data[0]} />
+            {editIndex !== -1 ?
+                <EditContentItemForm titleData={data[editIndex]} closeFunction={()=>setEditIndex(-1)}/>    
+            : null}
+            
 
             {data.map((titleData, index)=> {
-                return <ContentItem key={index} isAdmin={true} titleData={titleData}/>
+                return <ContentItem key={index} editFunction={()=>setEditIndex(index)} isAdmin={true} titleData={titleData}/>
             })}
         </div>
     )
