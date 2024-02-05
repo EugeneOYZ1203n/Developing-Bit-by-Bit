@@ -1,0 +1,130 @@
+.BlackBackground {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+
+    background-color: #0000008F;
+}
+
+.EditContentItemForm {  
+    margin: 10vh 20vw;
+    background-color: var(--primary-dark);
+    padding: 20px 5vw;
+    max-height: 80vh;
+    
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.EditContentItemForm::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+.EditContentItemForm {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.EditContentItemForm input, .EditContentItemForm textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--text-main);
+
+    margin: 0 0 0.6em;
+
+    color: var(--text-main);
+
+    font-family: unset;
+}
+
+.EditContentItemForm input::placeholder, .EditContentItemForm textarea::placeholder {
+    color: var(--primary-light);
+    vertical-align: bottom;
+}
+
+.EditContentItemForm input {
+    min-height: 2em;
+}
+
+.EditContentItemForm textarea {
+    resize: none;
+    min-height: 4em;
+}
+
+.EditContentItemForm input:focus, .EditContentItemForm textarea:focus{
+    outline: none;
+    line-height: 1.2em;
+    border-bottom: 1px solid var(--accent);
+}
+
+.EditContentItemForm h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.EditContentItemForm .ChapterIndexDiv input {
+    font-size: 10px;
+}
+
+.EditContentItemForm .ChapterIndexDiv .chapterInputField {
+    width: 50%;
+    margin-right: 15px;
+}
+.EditContentItemForm .ChapterIndexDiv .indexInputField {    
+    width: 20%;
+}
+.EditContentItemForm .titleInputField {
+    font-size: 20px;
+}
+.EditContentItemForm .tagsInputField {
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.EditContentItemForm .VariationDiv {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid var(--primary-mid);
+    margin: 10px 0;
+}
+.EditContentItemForm .SubmitButton {
+    background-color: var(--primary-mid);
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    
+    padding: 10px 30px;
+    
+    display: block;
+    margin: 10px auto 5px;
+    
+    font-size: 18px;
+    font-weight: 400;
+
+    transition: all 0.3s;
+}
+.EditContentItemForm .SubmitButton:hover{
+    padding: 10px 40px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+
+    transition: all 0.3s;
+}
+.EditContentItemForm .CancelButton{
+    background-color: transparent;
+    color: var(--primary-light);
+    border: none;
+
+    margin: 5px auto 10px;
+}
+.EditContentItemForm .CancelButton:hover {
+    color: var(--accent);
+}
+

@@ -8,6 +8,7 @@
   --code-block-bg: #07050C;
 
   font-family: Verdana, sans-serif;
+  caret-color: var(--accent);
 }
 
 .editButton{

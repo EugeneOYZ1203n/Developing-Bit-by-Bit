@@ -1,6 +1,7 @@
 import './MainContentPanel.css'
 
 import ContentItem from './ContentItem'
+import EditContentItemForm from './EditContentItemForm'
 
 export default () => {
     const data = [{
@@ -35,6 +36,8 @@ export default () => {
 
     return (
         <div className="MainContentPanel">
+            <EditContentItemForm titleData={data[0]} />
+
             {data.map((titleData, index)=> {
                 return <ContentItem key={index} isAdmin={true} titleData={titleData}/>
             })}
