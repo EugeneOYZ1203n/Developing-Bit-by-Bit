@@ -4,7 +4,6 @@ import "./hljsCustomTheme.css"
 import hljs from "highlight.js"
 
 export default ({titleData, isAdmin}:{titleData: {
-    chapter_num: Number,
     title_num: Number,
     chapter: String,
     title: String,
@@ -19,7 +18,7 @@ export default ({titleData, isAdmin}:{titleData: {
     const [variationIndex, setVariationIndex] = useState(0);
 
     useEffect(()=>{
-        const codeBlock = document.getElementById(`Code-Block-${titleData.chapter_num}-${titleData.title_num}`);
+        const codeBlock = document.getElementById(`Code-Block-${titleData.chapter}-${titleData.title_num}`);
         console.log(codeBlock)
         
         codeBlock!.removeAttribute("data-highlighted");
@@ -30,7 +29,7 @@ export default ({titleData, isAdmin}:{titleData: {
         <div className="ContentItem">
             <div className='ContentItem-HorizontalFlexBox'>
                 <h2>{titleData.title} {isAdmin?<button className='editButton'>{"\[ edit \]"}</button>:null}</h2>
-                <p>#{String(titleData.chapter_num)}-{String(titleData.title_num)}</p>
+                <p>#{`${titleData.chapter}-${titleData.title_num}`}</p>
             </div>
 
             <div className='buttonList'>
@@ -49,7 +48,7 @@ export default ({titleData, isAdmin}:{titleData: {
                 {titleData.variations[variationIndex].variationDesc}
             </p>
 
-            <pre><code id={`Code-Block-${titleData.chapter_num}-${titleData.title_num}`}>
+            <pre><code id={`Code-Block-${titleData.chapter}-${titleData.title_num}`}>
                 {titleData.variations[variationIndex].variationCode}
             </code></pre>
 

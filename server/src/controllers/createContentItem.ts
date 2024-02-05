@@ -2,15 +2,14 @@ import { Request, Response } from "express";
 import contentItemModel from "../model/contentItemModel";
 
 export default async (req: Request, res: Response) => {
-    const {chapter_num, title_num, chapter, title, variations, tags} = req.body;
+    const {title_num, chapter, title, variations, tags} = req.body;
 
-    if (isNaN(chapter_num) || isNaN(title_num) || chapter === "" || title === "" || !Array.isArray(variations) || variations.length <= 0){
+    if (isNaN(title_num) || chapter === "" || title === "" || !Array.isArray(variations) || variations.length <= 0){
         res.status(400).send('Invalid inputs');
         return;
     }
 
     const contentItem = new contentItemModel({
-        chapter_num,
         title_num,
         chapter, 
         title,
