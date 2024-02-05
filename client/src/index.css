@@ -1,11 +1,11 @@
 :root {
-  --dark-blue: #0B132B;
-  --mid-blue: #1C2541;
-  --light-blue: #3A506B;
-  --orange: #FCA311;
-  --grey: #E4E4E4;
-  --white: #FFF;
-  --black: #07050C;
+  --primary-dark: #2e3047;
+  --primary-mid: #3c3f58;
+  --primary-light: #707793;
+  --accent: #3bba9c;
+  --text-sub: #E4E4E4;
+  --text-main: #FFF;
+  --code-block-bg: #07050C;
 
   font-family: Verdana, sans-serif;
 }
@@ -13,10 +13,10 @@
 .editButton{
   background-color: transparent;
   border: none;
-  color: var(--light-blue);
+  color: var(--primary-light);
 
   cursor: pointer;
 }
 .editButton:hover{
-  color: var(--orange);
+  color: var(--accent);
 }

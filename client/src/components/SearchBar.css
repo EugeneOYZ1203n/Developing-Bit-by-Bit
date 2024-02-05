@@ -6,20 +6,20 @@
 
 .SearchBar input {
     width: 100%;
-    background-color: var(--light-blue);
+    background-color: var(--primary-light);
     border: none;
     height: 1.5rem;
     padding-left: 1em;
     border-radius: 10px;
-    color: var(--white);
+    color: var(--text-main);
 
     transition: height 0.5s;
 }
 .SearchBar input::placeholder {
-    color: var(--dark-blue);
+    color: var(--primary-dark);
 }
 .SearchBar input:focus{
-    outline: var(--white) solid 1px;
+    outline: var(--text-main) solid 1px;
     height: 2rem;
 
     transition: height 0.5s;

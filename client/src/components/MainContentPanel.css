@@ -4,7 +4,7 @@
     margin-left: 230px;
     padding: 20px;
 
-    background-color: var(--mid-blue);
+    background-color: var(--primary-mid);
 
-    color: var(--white)
+    color: var(--text-main)
 }

@@ -1,8 +1,8 @@
 .LoginPage {
-    background-color: var(--mid-blue);
+    background-color: var(--primary-mid);
     width: 100vw;
     height: 100vh;
-    color: var(--white);
+    color: var(--text-main);
 
     display: flex;
     align-items: center;
@@ -17,22 +17,22 @@
 
 .LoginPage input {
     width: 20em;
-    background-color: var(--light-blue);
+    background-color: var(--primary-light);
     border: none;
     height: 2em;
     padding-left: 1em;
     border-radius: 10px;
-    color: var(--white);
+    color: var(--text-main);
     margin: 5px;
     display: block;
 
     transition: height 0.5s;
 }
 .LoginPage input::placeholder {
-    color: var(--dark-blue);
+    color: var(--primary-dark);
 }
 .LoginPage input:focus{
-    outline: var(--white) solid 1px;
+    outline: var(--text-main) solid 1px;
     height: 3em;
 
     transition: height 0.5s;
@@ -44,7 +44,7 @@
 
     width: 10em;
 
-    background-color: var(--white);
+    background-color: var(--text-main);
 
     padding: 5px;
     border-radius: 10px;
@@ -53,5 +53,5 @@
 }
 
 .LoginPage button:hover {
-    background-color: var(--orange);
+    background-color: var(--accent);
 }

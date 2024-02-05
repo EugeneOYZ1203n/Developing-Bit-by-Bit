@@ -4,9 +4,9 @@
     position: fixed;
     left: 0;
     
-    background-color: var(--dark-blue);
+    background-color: var(--primary-dark);
 
-    color: var(--white)
+    color: var(--text-main)
 }
 
 .ScrollTitle {

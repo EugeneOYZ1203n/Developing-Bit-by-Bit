@@ -3,11 +3,11 @@
     display: block;
     width: 80%;
     margin: 5px auto;
-    color: var(--grey);
+    color: var(--text-sub);
 }
 
 .accordion {
-    border-top: 2px solid var(--light-blue);
+    border-top: 2px solid var(--primary-light);
     display: flex;
     justify-content: space-between;
 
@@ -15,7 +15,7 @@
 }
 
 .accordion:hover {
-    color: var(--orange)
+    color: var(--accent)
 }
 
 .accordion p {
@@ -40,7 +40,7 @@
 
 .titleGroup {
     margin-left: 1em;
-    border-top: 2px solid var(--mid-blue);
+    border-top: 2px solid var(--primary-mid);
     padding: 0.25em 0;
     display: flex;
     justify-content: space-between;
@@ -60,5 +60,5 @@
 }
 
 .ContentHeader a:hover {
-    color: var(--orange);
+    color: var(--accent);
 }

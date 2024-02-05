@@ -26,14 +26,14 @@ hue-6-2: #e6c07b
 
 */
 .hljs {
-    color: var(--white);
-    background: var(--black);
+    color: var(--text-main);
+    background: var(--code-block-bg);
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
-    border: 1px solid var(--light-blue);
+    border: 1px solid var(--primary-light);
 }
 .hljs-comment,
 .hljs-quote {

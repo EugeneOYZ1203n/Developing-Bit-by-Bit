@@ -1,5 +1,5 @@
 .ContentItem {
-    background-color: var(--dark-blue);
+    background-color: var(--primary-dark);
     padding: 20px;
     border-radius: 20px;
     width: 95%;
@@ -7,7 +7,7 @@
 }
 
 .ContentItem h2,.ContentItem p {
-    color: var(--grey)
+    color: var(--text-sub)
 }
 
 .ContentItem-HorizontalFlexBox {
@@ -17,7 +17,7 @@
 
 .ContentItem-HorizontalFlexBox p {
     font-size: 8px;
-    color: var(--light-blue)
+    color: var(--primary-light)
 }
 
 .ContentItem-Description {
@@ -38,9 +38,9 @@
 .buttonList button {
     padding: 5px 1em;
     font-weight: 700;
-    color: var(--white);
-    background-color: var(--dark-blue);
-    border: 2px solid var(--light-blue);
+    color: var(--text-main);
+    background-color: var(--primary-dark);
+    border: 2px solid var(--primary-light);
 
     cursor: pointer;
 
@@ -51,12 +51,12 @@
 }
 
 .buttonList .Selected {
-    color: var(--dark-blue);
-    background-color: var(--white);
+    color: var(--primary-dark);
+    background-color: var(--text-main);
 }
 
 .buttonList button:hover {
-    color: var(--orange)
+    color: var(--accent)
 }
 
 .tagsList {
@@ -69,7 +69,7 @@
 }
 
 .tagsList p {
-    background-color: var(--mid-blue);
+    background-color: var(--primary-mid);
     padding: 6px;
     border-radius: 12px;
     margin-right: 5px;
