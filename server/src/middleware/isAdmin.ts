@@ -12,7 +12,7 @@ export default (req: Request, res: Response, next: NextFunction) => {
     const decoded = jwt.decode(token) as JwtPayload
     const userId = decoded!.userId;
 
-    if (userId === 1){
+    if (userId === Number(process.env.ADMIN_ID)){
         console.log('is Admin')
         next()
     }
