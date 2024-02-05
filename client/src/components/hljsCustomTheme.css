@@ -30,7 +30,7 @@ hue-6-2: #e6c07b
     background: var(--code-block-bg);
     margin: 10px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
     border: 1px solid var(--primary-light);

@@ -1,7 +1,6 @@
 .ContentItem {
     background-color: var(--primary-dark);
     padding: 20px;
-    border-radius: 20px;
     width: 95%;
     margin: 10px 0;
 }
