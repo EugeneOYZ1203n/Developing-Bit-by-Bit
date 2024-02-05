@@ -38,6 +38,11 @@
     transition: height 0.5s;
 }
 
+.LoginPage .ErrorDisplay {
+    text-align: center;
+    color: var(--accent);
+}
+
 .LoginPage button {
     display: block;
     margin: 10px auto;

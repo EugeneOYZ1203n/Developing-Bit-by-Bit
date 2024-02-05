@@ -17,6 +17,8 @@ app.use(morgan('tiny'));
 app.use(router);
 
 mongoose.connect(process.env.MONGO_URI!).then(()=>{
-    app.listen(8080);
-    console.log("App started listening on 8080")
+    console.log("Connected to mongoDB");
+    app.listen(process.env.PORT || 8080, ()=>{
+        console.log("App started listening on 8080");
+    });
 })
