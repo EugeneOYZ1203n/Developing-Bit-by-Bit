@@ -1,6 +1,6 @@
 import { API_URL } from "./config";
 
-export default (token:String) => {
+export default (token:string) => {
     return fetch(`${API_URL}/content`, {
         method: 'GET',
         headers: {

@@ -1,6 +1,6 @@
 import { API_URL } from "./config";
 
-export default (username:String, password:String) => {
+export default (username:string, password:string) => {
     return fetch(`${API_URL}/login`, {
         method: 'POST',
         headers: {
