@@ -143,7 +143,7 @@ export default ({titleData, closeFunction}:{titleData: {
 
     const cancelFormButton = (
         <button type='button' className='CancelButton' onClick={()=>{
-            if (titleData == editedTitleData){
+            if (JSON.stringify(titleData) == JSON.stringify(editedTitleData)){
                 closeFunction();
             }
             else {
