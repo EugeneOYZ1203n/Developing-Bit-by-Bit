@@ -6,6 +6,7 @@ import ReactTextareaAutosize from 'react-textarea-autosize';
 import { useMutation, useQueryClient } from 'react-query';
 import createContentItemRequest from '../api/createContentItemRequest';
 import { TokenContext } from '../App';
+import updateContentItemRequest from '../api/updateContentItemRequest';
 
 
 export default ({titleData, closeFunction}:{titleData: {
@@ -114,6 +115,10 @@ export default ({titleData, closeFunction}:{titleData: {
         () => createContentItemRequest(token, editedTitleData), 
         {onSettled: () => {queryClient.invalidateQueries('contentitem');}}
     )
+    const {mutate: updateContentItem} = useMutation(
+        () => updateContentItemRequest(token, editedTitleData), 
+        {onSettled: () => {queryClient.invalidateQueries('contentitem');}}
+    )
 
     const submitFormButton = (_id:string)=>(
         <button className="SubmitButton" type="submit" onClick={(e)=>{
@@ -123,7 +128,9 @@ export default ({titleData, closeFunction}:{titleData: {
                 if (editedTitleData._id == ""){
                     createContentItem()
                 }
-
+                else{
+                    updateContentItem()
+                }
                 closeFunction();
             }
             
