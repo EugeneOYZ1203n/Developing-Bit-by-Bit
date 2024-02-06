@@ -10,6 +10,7 @@ import { useQuery } from 'react-query'
 import { TokenContext } from '../App'
 import { useContext } from 'react';
 import getChaptersList from '../helperFunctions/getChaptersList';
+import { SearchContext } from '../pages/ContentPage';
 
 export default () => {
     //@ts-ignore
@@ -18,7 +19,10 @@ export default () => {
         () => readContentItemsRequest(token)
     )
 
-    const chapters : Array<{name: string, titles: Array<string>}> = getChaptersList(data)
+    //@ts-ignore
+    const [searchString, setSearchString] = useContext(SearchContext)
+
+    const chapters : Array<{name: string, titles: Array<string>}> = getChaptersList(data, searchString)
 
     const isAdmin = true;
 

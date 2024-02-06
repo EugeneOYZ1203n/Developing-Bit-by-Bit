@@ -10,6 +10,8 @@ import readContentItemsRequest from '../api/readContentItemsRequest'
 import { useQuery } from 'react-query'
 import { TokenContext } from '../App'
 import sortApiData from '../helperFunctions/sortApiData'
+import filterApiDataBySearch from '../helperFunctions/filterApiDataBySearch'
+import { SearchContext } from '../pages/ContentPage'
 
 export default () => {
     const [editIndex, setEditIndex] = useState(-1);
@@ -20,7 +22,11 @@ export default () => {
         () => readContentItemsRequest(token)
     )
 
+    //@ts-ignore
+    const [searchString, setSearchString] = useContext(SearchContext)
+
     sortApiData(data);
+    const filtered = filterApiDataBySearch(data, searchString);
 
     return (
         <div className="MainContentPanel">
@@ -31,7 +37,7 @@ export default () => {
             {isLoading ? 
                 <BarLoader/>    
             :
-                <div>{ data.map((titleData:{
+                <div>{ filtered.map((titleData:{
                     title_num: Number,
                     chapter: string,
                     title: string,

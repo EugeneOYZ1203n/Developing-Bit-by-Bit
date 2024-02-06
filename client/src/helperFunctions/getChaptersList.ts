@@ -1,23 +1,28 @@
+import filterApiDataBySearch from "./filterApiDataBySearch";
 import sortApiData from "./sortApiData"
 
 export default (data:Array<{
-    title_num: number,
+    title_num: Number,
     chapter: string,
     title: string,
     variations: Array<{
         variationName: string,
         variationCode: string,
         variationDesc: string,
-}>}>) => {
-    if (typeof data == 'undefined'){
+    }>
+    tags: Array<string>,
+}>, searchString: string) => {
+    if (typeof data == 'undefined' || !data){
         return data;
     }
 
     sortApiData(data);
 
+    const filtered = filterApiDataBySearch(data, searchString);
+
     let res : Array<{name: string, titles: Array<string>}> = [];
 
-    data.forEach((titleData)=>{
+    filtered.forEach((titleData)=>{
         if (res.length == 0 || res[res.length-1].name != titleData.chapter){
             res.push({
                 name: titleData.chapter,

@@ -6,8 +6,10 @@ export default (data:Array<{
         variationName: string,
         variationCode: string,
         variationDesc: string,
-}>}>) => {
-    if (typeof data == 'undefined'){
+    }>
+    tags: Array<string>,
+}>) => {
+    if (typeof data == 'undefined' || !data){
         return data;
     }
 
