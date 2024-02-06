@@ -12,7 +12,7 @@ export default ({chapter, isAdmin}:{chapter: {name: string, titles: Array<{title
             </div>
 
             <div className={expanded ? 'titlesList' : 'titlesList hide'}>
-                {chapter.titles.map((title: {titleName: string, _id: string}, i)=>{
+                {chapter.titles.map((title: {titleName: string, _id: string})=>{
                     return (
                     <div key={title._id} className='titleGroup'>
                         <a href={`#${title.titleName}`}><p>{title.titleName}</p></a>
