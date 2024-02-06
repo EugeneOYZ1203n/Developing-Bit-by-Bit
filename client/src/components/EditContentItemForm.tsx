@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import createContentItemRequest from '../api/createContentItemRequest';
 import { TokenContext } from '../App';
 import updateContentItemRequest from '../api/updateContentItemRequest';
+import { confirmPopupInfoContext } from '../pages/ContentPage';
 
 
 export default ({titleData, closeFunction}:{titleData: {
@@ -137,9 +138,24 @@ export default ({titleData, closeFunction}:{titleData: {
         }}>Apply</button>
     )
 
+    //@ts-ignore
+    const [confirmPopupInfo, setConfirmPopupInfo] = useContext(confirmPopupInfoContext);
+
     const cancelFormButton = (
         <button type='button' className='CancelButton' onClick={()=>{
-            closeFunction();
+            if (titleData == editedTitleData){
+                closeFunction();
+            }
+            else {
+                setConfirmPopupInfo({
+                    //@ts-ignore
+                    confirmText:"Discard Changes?", 
+                    confirmButtonText:"Yes", 
+                    cancelButtonText:"No", 
+                    confirmFunction:()=>{closeFunction(); setConfirmPopupInfo(null)}, 
+                    cancelFunction:()=>{setConfirmPopupInfo(null)}
+                })
+            }
         }}>Cancel</button>
     )
 
@@ -166,6 +182,7 @@ export default ({titleData, closeFunction}:{titleData: {
 
                 {submitFormButton(titleData._id)}
                 {cancelFormButton}
+                
             </form>
         </div>
     )

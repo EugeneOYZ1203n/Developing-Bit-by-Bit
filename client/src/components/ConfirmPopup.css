@@ -1,0 +1,63 @@
+.ConfirmPopup {  
+    margin: 30vh auto;
+    background-color: var(--primary-dark);
+    padding: 10px;
+    max-height: 80vh;
+    width: fit-content;
+    height: fit-content;
+    
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    color: var(--text-main);
+
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.ConfirmPopup::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+.ConfirmPopup {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.ConfirmPopup .ConfirmText {
+    text-align: center;
+    margin: 10px;
+}
+
+.ConfirmPopup .buttonsList {
+    margin: 0 auto;
+    display: block;
+}
+
+.ConfirmPopup .buttonsList button {
+    border: none;
+    padding: 5px;
+    background-color: transparent;
+    margin: 5px;
+}
+
+.ConfirmPopup .buttonsList .PopupConfirmButton {
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+}
+
+.ConfirmPopup .buttonsList .PopupCancelButton {
+    color: var(--primary-light);
+}
+
+.ConfirmPopup .buttonsList .PopupConfirmButton:hover {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.ConfirmPopup .buttonsList .PopupCancelButton:hover {
+    color: var(--accent);
+}
