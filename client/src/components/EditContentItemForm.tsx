@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './ContentItem.css';
 import './EditContentItemForm.css'
 import "./hljsCustomTheme.css"
 import ReactTextareaAutosize from 'react-textarea-autosize';
+import { useMutation, useQueryClient } from 'react-query';
+import createContentItemRequest from '../api/createContentItemRequest';
+import { TokenContext } from '../App';
 
 
 export default ({titleData, closeFunction}:{titleData: {
@@ -49,7 +52,7 @@ export default ({titleData, closeFunction}:{titleData: {
     )
 
     const variationNameInput = (variation: {variationName: string, variationCode: string, variationDesc: string}, index: number)=>(
-        <input required type='text' value={variation.variationName as string | number | readonly string[] | undefined} placeholder='Variation Name' onChange={(e)=>{
+        <input type='text' value={variation.variationName as string | number | readonly string[] | undefined} placeholder='Variation Name' onChange={(e)=>{
             let tmp = editedTitleData.variations;
             tmp[index].variationName = e.target.value;
             setEditedTitleData({...editedTitleData,variations: tmp});
@@ -103,11 +106,24 @@ export default ({titleData, closeFunction}:{titleData: {
         </div>
     )
 
+    //@ts-ignore
+    const [token, setToken] = useContext(TokenContext);
+
+    const queryClient = useQueryClient();
+    const {mutate: createContentItem} = useMutation(
+        () => createContentItemRequest(token, editedTitleData), 
+        {onSettled: () => {queryClient.invalidateQueries('contentitem');}}
+    )
+
     const submitFormButton = (_id:string)=>(
         <button className="SubmitButton" type="submit" onClick={(e)=>{
             e.preventDefault();
 
             if (inputFieldValidity){
+                if (editedTitleData._id == ""){
+                    createContentItem()
+                }
+
                 closeFunction();
             }
             
@@ -130,7 +146,7 @@ export default ({titleData, closeFunction}:{titleData: {
                 {tagsInput}
                 
                 {editedTitleData.variations.map((variation:{variationName: string, variationCode: string, variationDesc: string}, index:number)=>{return(
-                    <div className='VariationDiv' key={variation.variationName}>
+                    <div className='VariationDiv' key={index}>
                         {variationNameInput(variation, index)}
                         {variationDescInput(variation, index)}
                         {variationCodeInput(variation, index)}
