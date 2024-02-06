@@ -59,7 +59,7 @@ export default () => {
             :
                 <div className='ScrollTitle'>
                     {chapters.map((chapter, i) => {
-                        return <ContentHeader chapter={chapter} isAdmin={isAdmin} key={chapter.name+String(i)}/>
+                        return <ContentHeader chapter={chapter} key={chapter.name+String(i)}/>
                     })}
                     {isAdmin ? <div><button className='editButton addButton' onClick={()=>
                         setIsAddContent(true)

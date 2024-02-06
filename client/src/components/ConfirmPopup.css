@@ -37,7 +37,7 @@
     display: block;
 }
 
-.ConfirmPopup .buttonsList button {
+.ConfirmPopup .buttonsList .PopupConfirmButton, .PopupCancelButton {
     border: none;
     padding: 5px;
     background-color: transparent;

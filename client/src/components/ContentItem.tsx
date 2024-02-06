@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './ContentItem.css';
 import "./hljsCustomTheme.css"
 import hljs from "highlight.js"
+import { useMutation, useQueryClient } from 'react-query';
+import deleteContentItemRequest from '../api/deleteContentItemRequest';
+import { TokenContext } from '../App';
+import { confirmPopupInfoContext } from '../pages/ContentPage';
 
 export default ({titleData, isAdmin, editFunction}:{titleData: {
     _id: string,
@@ -24,15 +28,35 @@ export default ({titleData, isAdmin, editFunction}:{titleData: {
         codeBlock!.removeAttribute("data-highlighted");
         hljs.highlightElement(codeBlock!)
     }, [variationIndex])
+
+    //@ts-ignore
+    const [token, setToken] = useContext(TokenContext);
+
+    //@ts-ignore
+    const [confirmPopupInfo, setConfirmPopupInfo] = useContext(confirmPopupInfoContext);
+
+    const queryClient = useQueryClient();
+    const {mutate: deleteContentItem} = useMutation(
+        () => deleteContentItemRequest(token, titleData._id), 
+        {onSettled: () => {queryClient.invalidateQueries('contentitem');}}
+    )
     
     return (
         <div className="ContentItem">
             <div className='ContentItem-HorizontalFlexBox'>
-                <h2 id={titleData.title}>{titleData.title} {isAdmin?
-                    <button className='editButton' onClick={()=>editFunction()}>{"\[ edit \]"}</button>
-                    :null} {isAdmin?
-                    <button className='editButton'>{"\[ delete \]"}</button>
-                    :null}
+                <h2 id={titleData.title}>{titleData.title} 
+                    {isAdmin?<button className='editButton' onClick={()=>editFunction()}>{"\[ edit \]"}</button>
+                    :null} 
+                    {isAdmin?<button className='editButton' onClick={()=>{
+                        setConfirmPopupInfo({
+                            //@ts-ignore
+                            confirmText:"Delete Content?", 
+                            confirmButtonText:"Yes", 
+                            cancelButtonText:"No", 
+                            confirmFunction:()=>{deleteContentItem(); setConfirmPopupInfo(null)}, 
+                            cancelFunction:()=>{setConfirmPopupInfo(null)}
+                        })
+                    }}>{"\[ delete \]"}</button>:null}
                     
                 </h2>
                 <p>#{`${titleData.chapter}-${titleData.title_num}`}</p>

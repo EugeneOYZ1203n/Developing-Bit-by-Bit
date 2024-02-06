@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './ContentHeader.css';
 
-export default ({chapter, isAdmin}:{chapter: {name: string, titles: Array<{titleName: string, _id: string}>}, isAdmin:Boolean}) => {
+export default ({chapter}:{chapter: {name: string, titles: Array<{titleName: string, _id: string}>}}) => {
     const [expanded, setExpanded] = useState(true);
 
     return (
@@ -16,7 +16,6 @@ export default ({chapter, isAdmin}:{chapter: {name: string, titles: Array<{title
                     return (
                     <div key={title._id} className='titleGroup'>
                         <a href={`#${title.titleName}`}><p>{title.titleName}</p></a>
-                        {isAdmin?<button className='editButton'>{"\[ delete \]"}</button>:null}
                     </div>
                     )
                 })}
