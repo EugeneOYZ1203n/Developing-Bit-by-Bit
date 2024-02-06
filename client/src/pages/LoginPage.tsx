@@ -11,14 +11,15 @@ export default () => {
     const [error, setError] = useState("");
     const navigate = useNavigate();
     // @ts-ignore
-    const [token, setToken] = useContext(TokenContext);
+    const [token, setToken, isAdmin, setIsAdmin] = useContext(TokenContext);
 
     // @ts-ignore
     const handleLogin = (e) => {
         e.preventDefault();
         loginRequest(username, password)
-        .then(({token})=>{
+        .then(({token, isAdmin})=>{
             setToken(token);
+            setIsAdmin(isAdmin);
             navigate('/');
         }).catch(err=>{
             setError(err.message);

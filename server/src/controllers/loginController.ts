@@ -8,7 +8,7 @@ export default (req: Request, res: Response) => {
             userId: Number(process.env.ADMIN_ID),
         }, process.env.JWT_SECRET!);
 
-        res.json({token});
+        res.json({token, isAdmin:true});
     } else if (req.body.username === process.env.GUEST_USERNAME &&
                req.body.password === process.env.GUEST_PASSWORD
             ){
@@ -16,7 +16,7 @@ export default (req: Request, res: Response) => {
             userId: Number(process.env.GUEST_ID),
         }, process.env.JWT_SECRET!);
 
-        res.json({token});
+        res.json({token, isAdmin:false});
     } else{
         res.status(401).send('Wrong Password!')
     }

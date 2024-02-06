@@ -16,11 +16,12 @@ const ProtectedRoute = ({element}) => {
 
 function App() {
   const [token, setToken] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
 
   return (
     <div className='App'>
       {/*@ts-ignore*/}
-      <TokenContext.Provider value={[token, setToken]} >
+      <TokenContext.Provider value={[token, setToken, isAdmin, setIsAdmin]} >
         <Routes>
           <Route path="/" element={<ProtectedRoute element={ContentPage}/>} />
           <Route path="/login" element={<LoginPage />} />

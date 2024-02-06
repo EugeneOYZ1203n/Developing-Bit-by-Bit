@@ -109,7 +109,7 @@ export default ({titleData, closeFunction}:{titleData: {
     )
 
     //@ts-ignore
-    const [token, setToken] = useContext(TokenContext);
+    const [token, setToken, isAdmin, setIsAdmin] = useContext(TokenContext);
 
     const queryClient = useQueryClient();
     const {mutate: createContentItem} = useMutation(

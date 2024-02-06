@@ -17,7 +17,7 @@ export default () => {
     const [editIndex, setEditIndex] = useState(-1);
 
     //@ts-ignore
-    const [token, setToken] = useContext(TokenContext);
+    const [token, setToken, isAdmin, setIsAdmin] = useContext(TokenContext);
     const {isLoading, data: data} = useQuery('contentitem', 
         () => readContentItemsRequest(token)
     )
@@ -49,7 +49,7 @@ export default () => {
                     }>,
                     tags: Array<string>
                 }, index: number)=> {
-                    return <ContentItem key={titleData._id} editFunction={()=>setEditIndex(index)} isAdmin={true} titleData={titleData}/>
+                    return <ContentItem key={titleData._id} editFunction={()=>setEditIndex(index)} titleData={titleData}/>
                 })}</div>
             }
         </div>

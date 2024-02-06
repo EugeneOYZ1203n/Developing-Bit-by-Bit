@@ -7,7 +7,7 @@ import deleteContentItemRequest from '../api/deleteContentItemRequest';
 import { TokenContext } from '../App';
 import { confirmPopupInfoContext } from '../pages/ContentPage';
 
-export default ({titleData, isAdmin, editFunction}:{titleData: {
+export default ({titleData, editFunction}:{titleData: {
     _id: string,
     title_num: Number,
     chapter: string,
@@ -18,7 +18,7 @@ export default ({titleData, isAdmin, editFunction}:{titleData: {
         variationDesc: string,
     }>,
     tags: Array<string>
-}, isAdmin:Boolean, editFunction: Function}) => {
+}, editFunction: Function}) => {
 
     const [variationIndex, setVariationIndex] = useState(0);
 
@@ -30,7 +30,7 @@ export default ({titleData, isAdmin, editFunction}:{titleData: {
     }, [variationIndex])
 
     //@ts-ignore
-    const [token, setToken] = useContext(TokenContext);
+    const [token, setToken, isAdmin, setIsAdmin] = useContext(TokenContext);
 
     //@ts-ignore
     const [confirmPopupInfo, setConfirmPopupInfo] = useContext(confirmPopupInfoContext);

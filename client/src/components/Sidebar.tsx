@@ -15,7 +15,7 @@ import EditContentItemForm from './EditContentItemForm';
 
 export default () => {
     //@ts-ignore
-    const [token, setToken] = useContext(TokenContext);
+    const [token, setToken, isAdmin, setIsAdmin] = useContext(TokenContext);
     const {isLoading, data: data} = useQuery('contentitem', 
         () => readContentItemsRequest(token)
     )
@@ -24,8 +24,6 @@ export default () => {
     const [searchString, setSearchString] = useContext(SearchContext)
 
     const chapters : Array<{name: string, titles: Array<{titleName: string, _id: string}>}> = getChaptersList(data, searchString)
-
-    const isAdmin = true;
 
     const [isAddContent, setIsAddContent] = useState(false)
 
