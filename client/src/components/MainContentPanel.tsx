@@ -38,6 +38,7 @@ export default () => {
                 <BarLoader/>    
             :
                 <div>{ filtered.map((titleData:{
+                    _id: string,
                     title_num: Number,
                     chapter: string,
                     title: string,
@@ -48,7 +49,7 @@ export default () => {
                     }>,
                     tags: Array<string>
                 }, index: number)=> {
-                    return <ContentItem key={index} editFunction={()=>setEditIndex(index)} isAdmin={true} titleData={titleData}/>
+                    return <ContentItem key={titleData._id} editFunction={()=>setEditIndex(index)} isAdmin={true} titleData={titleData}/>
                 })}</div>
             }
         </div>

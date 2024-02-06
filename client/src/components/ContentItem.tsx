@@ -4,6 +4,7 @@ import "./hljsCustomTheme.css"
 import hljs from "highlight.js"
 
 export default ({titleData, isAdmin, editFunction}:{titleData: {
+    _id: string,
     title_num: Number,
     chapter: string,
     title: string,

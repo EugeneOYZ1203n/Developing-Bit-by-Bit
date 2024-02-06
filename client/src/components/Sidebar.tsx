@@ -8,9 +8,10 @@ import { BarLoader } from 'react-spinners'
 import readContentItemsRequest from '../api/readContentItemsRequest'
 import { useQuery } from 'react-query'
 import { TokenContext } from '../App'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import getChaptersList from '../helperFunctions/getChaptersList';
 import { SearchContext } from '../pages/ContentPage';
+import EditContentItemForm from './EditContentItemForm';
 
 export default () => {
     //@ts-ignore
@@ -22,12 +23,29 @@ export default () => {
     //@ts-ignore
     const [searchString, setSearchString] = useContext(SearchContext)
 
-    const chapters : Array<{name: string, titles: Array<string>}> = getChaptersList(data, searchString)
+    const chapters : Array<{name: string, titles: Array<{titleName: string, _id: string}>}> = getChaptersList(data, searchString)
 
     const isAdmin = true;
 
+    const [isAddContent, setIsAddContent] = useState(false)
+
     return (
         <div className="Sidebar">
+            {isAddContent ?
+                <EditContentItemForm titleData={{
+                    _id: "",
+                    title_num: 1,
+                    chapter: "",
+                    title: "",
+                    variations: [{
+                        variationName: '',
+                        variationCode: '',
+                        variationDesc: '',
+                    }],
+                    tags: ['']
+                }} closeFunction={()=>setIsAddContent(false)}/>    
+            : null}
+
             <div className='TopOfSideBar'>
                 <div className='Logo'>
                     <p>Developing</p>
@@ -43,7 +61,9 @@ export default () => {
                     {chapters.map((chapter, i) => {
                         return <ContentHeader chapter={chapter} isAdmin={isAdmin} key={chapter.name+String(i)}/>
                     })}
-                    {isAdmin ? <div><button className='editButton addButton'>{"\[ add new title \]"}</button></div>: null}
+                    {isAdmin ? <div><button className='editButton addButton' onClick={()=>
+                        setIsAddContent(true)
+                    }>{"\[ add new title \]"}</button></div>: null}
                 </div>  
             }
         </div>
